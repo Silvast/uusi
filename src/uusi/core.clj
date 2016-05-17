@@ -7,10 +7,12 @@
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [luminus.logger :as logger]
-            [mount.core :as mount]))
+            [mount.core :as mount]
+            [ring.adapter.jetty :as jetty]))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
-  [& [args]]
-  (db/add-message args)
+  [& args]
+  (db/add-message {:guest "Ansku" :message "buu"})
   (println "Hello, World!"))
